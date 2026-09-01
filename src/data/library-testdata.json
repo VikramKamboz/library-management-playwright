@@ -1,0 +1,21 @@
+{
+  "validBook": {
+    "title": "The Pragmatic Programmer",
+    "author": "David Thomas",
+    "isbn": "9780135957059"
+  },
+  "duplicateIsbnBook": {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "isbn": "9780132350884"
+  },
+  "validMember": {
+    "name": "Jane Doe",
+    "email": "jane.doe@example.com"
+  },
+  "invalidEmails": [
+    { "case": "missing @", "email": "jane.doe.example.com", "expectedError": "Invalid email format." },
+    { "case": "missing domain", "email": "jane.doe@", "expectedError": "Invalid email format." },
+    { "case": "empty string", "email": "", "expectedError": "Name and email are required" }
+  ]
+}

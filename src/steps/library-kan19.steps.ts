@@ -6,7 +6,7 @@ const { Given, When, Then } = createBdd(test);
 
 // Two distinct members are seeded so search can filter one in / one out
 Given('two members exist in the library for search testing', async ({ libraryMembersPage, state }) => {
-  const ts = Date.now();
+  const ts = `${Date.now()}${Math.floor(Math.random() * 1e6)}`;
 
   state.searchMemberName = `Alice Search${ts}`;
   state.searchMemberEmail = `alice.search${ts}@example.com`;

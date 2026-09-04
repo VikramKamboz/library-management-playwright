@@ -37,7 +37,7 @@ export default class LibraryMembersPage extends LibraryBasePage {
 
   async expectMemberAddedSuccessfully(email: string): Promise<void> {
     const memberRow = this.page.locator(libraryMembersLocators.membersListRows).filter({ hasText: email });
-    await expect(memberRow).toBeVisible();
+    await expect(memberRow.first()).toBeVisible();
   }
 
   async countAllMemberRows(): Promise<number> {

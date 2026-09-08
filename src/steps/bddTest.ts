@@ -18,6 +18,12 @@ export interface ScenarioState {
   memberName?: string;
   memberEmail?: string;
   memberRowCountBefore?: number;
+  // KAN-19: member search state
+  searchMemberName?: string;
+  searchMemberEmail?: string;
+  otherMemberName?: string;
+  otherMemberEmail?: string;
+  searchTerm?: string;
 }
 
 interface LibraryBddFixtures {

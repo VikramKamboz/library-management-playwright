@@ -10,4 +10,6 @@ export const libraryMembersLocators = {
   errorMessage: '#member-error',
   membersList: '#members-list',
   membersListRows: '#members-list tbody tr',
+  memberSearchInput: '#member-search',
+  membersEmptyState: '#members-list p.empty',
 };

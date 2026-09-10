@@ -11,4 +11,13 @@ export const libraryBooksLocators = {
   errorMessage: '#book-error',
   booksList: '#books-list',
   booksListRows: '#books-list tbody tr',
+  // KAN-18: filter/sort/pagination controls
+  availabilityFilter: '#availability-filter',
+  sortSelect: '#sort-select',
+  resetFiltersButton: '#reset-filters-btn',
+  booksPagination: '#books-pagination',
+  booksPrevButton: '#books-prev-btn',
+  booksNextButton: '#books-next-btn',
+  booksPaginationLabel: '#books-pagination span',
+  booksEmptyState: '#books-list p.empty',
 };

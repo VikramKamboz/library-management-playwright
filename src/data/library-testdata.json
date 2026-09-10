@@ -17,5 +17,17 @@
     { "case": "missing @", "email": "jane.doe.example.com", "expectedError": "Invalid email format." },
     { "case": "missing domain", "email": "jane.doe@", "expectedError": "Invalid email format." },
     { "case": "empty string", "email": "", "expectedError": "Name and email are required" }
-  ]
+  ],
+  "kan18FilterSort": {
+    "availableBookTitle": "KAN18 Available Book",
+    "availableBookAuthor": "Amara Filter",
+    "issuedBookTitle": "KAN18 Issued Book",
+    "issuedBookAuthor": "Zane Filter",
+    "issueMemberName": "KAN18 Filter Member",
+    "sortBookATitle": "AAA KAN18 Sort Book",
+    "sortBookAAuthor": "Zed Sorter",
+    "sortBookZTitle": "ZZZ KAN18 Sort Book",
+    "sortBookZAuthor": "amy sorter",
+    "paginationBookTitlePrefix": "KAN18 Pagination Book"
+  }
 }

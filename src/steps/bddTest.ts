@@ -24,6 +24,16 @@ export interface ScenarioState {
   otherMemberName?: string;
   otherMemberEmail?: string;
   searchTerm?: string;
+  // KAN-18: filter/sort/pagination state
+  availableBookTitle?: string;
+  availableBookIsbn?: string;
+  issuedBookTitle?: string;
+  issuedBookIsbn?: string;
+  sortBookATitle?: string;
+  sortBookAAuthor?: string;
+  sortBookZTitle?: string;
+  sortBookZAuthor?: string;
+  paginationBookTitlePrefix?: string;
 }
 
 interface LibraryBddFixtures {

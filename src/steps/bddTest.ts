@@ -3,7 +3,9 @@ import LibraryBooksPage from '../pages/library/LibraryBooksPage';
 import LibraryMembersPage from '../pages/library/LibraryMembersPage';
 import LibraryIssuePage from '../pages/library/LibraryIssuePage';
 import LibraryReturnPage from '../pages/library/LibraryReturnPage';
+import LibraryOverduePage from '../pages/library/LibraryOverduePage';
 import { DataLoader } from '../utils/DataLoader';
+import { LoanSeeder } from '../utils/LoanSeeder';
 import { envConfig, EnvironmentConfig } from '../config/ConfigManager';
 
 /**
@@ -34,6 +36,12 @@ export interface ScenarioState {
   sortBookZTitle?: string;
   sortBookZAuthor?: string;
   paginationBookTitlePrefix?: string;
+  // KAN-7: overdue loans view state
+  overdueIsbn?: string;
+  overdueMemberEmail?: string;
+  overdueDays?: number;
+  notDueIsbn?: string;
+  dueTodayIsbn?: string;
 }
 
 interface LibraryBddFixtures {
@@ -41,7 +49,9 @@ interface LibraryBddFixtures {
   libraryMembersPage: LibraryMembersPage;
   libraryIssuePage: LibraryIssuePage;
   libraryReturnPage: LibraryReturnPage;
+  libraryOverduePage: LibraryOverduePage;
   dataLoader: DataLoader;
+  loanSeeder: LoanSeeder;
   envConfig: EnvironmentConfig;
   state: ScenarioState;
 }
@@ -63,8 +73,23 @@ export const test = base.extend<LibraryBddFixtures>({
     await use(new LibraryReturnPage(page));
   },
 
+  libraryOverduePage: async ({ page }, use) => {
+    await use(new LibraryOverduePage(page));
+  },
+
   dataLoader: async ({}, use) => {
     await use(new DataLoader());
+  },
+
+  // KAN-7: seeds/backdates loans directly against the shared library.db so
+  // overdue/boundary preconditions can exist (the app itself can't create
+  // them). Any loan it touched is marked returned again on teardown so the
+  // shared dev database doesn't accumulate stray overdue loans between runs.
+  loanSeeder: async ({}, use) => {
+    const seeder = new LoanSeeder();
+    await use(seeder);
+    seeder.cleanup();
+    seeder.close();
   },
 
   envConfig: async ({}, use) => {

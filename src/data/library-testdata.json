@@ -29,5 +29,17 @@
     "sortBookZTitle": "ZZZ KAN18 Sort Book",
     "sortBookZAuthor": "amy sorter",
     "paginationBookTitlePrefix": "KAN18 Pagination Book"
+  },
+  "kan7Overdue": {
+    "overdueBookTitle": "KAN7 Overdue Book",
+    "overdueBookAuthor": "Overdue Author",
+    "overdueMemberName": "KAN7 Overdue Member",
+    "notDueBookTitle": "KAN7 NotDue Book",
+    "notDueBookAuthor": "NotDue Author",
+    "notDueMemberName": "KAN7 NotDue Member",
+    "dueTodayBookTitle": "KAN7 DueToday Book",
+    "dueTodayBookAuthor": "DueToday Author",
+    "dueTodayMemberName": "KAN7 DueToday Member",
+    "emptyStateMessage": "No overdue loans right now."
   }
 }
